@@ -1,5 +1,94 @@
-template-repository (1.0-1) unstable; urgency=medium
+libauthen-simple-perl (0.5-1.1) unstable; urgency=medium
 
-  * Initial release
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Holger Levsen <holger@debian.org>  Sat, 02 Jan 2021 18:28:13 +0100
+
+libauthen-simple-perl (0.5-1) unstable; urgency=low
+
+  [ gregor herrmann ]
+  * debian/control: Added: ${misc:Depends} to Depends: field.
+  * debian/control: remove DM-Upload-Allowed since Xavier Oswald is a DD
+    now.
+  * Change my email address.
+
+  [ Nathan Handler ]
+  * debian/watch: Update to ignore development releases.
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Changed: Replace versioned (build-)dependency on
+    perl (>= 5.6.0-{12,16}) with an unversioned dependency on perl (as
+    permitted by Debian Policy 3.8.3).
+
+  [ Ansgar Burchardt ]
+  * debian/control: Convert Vcs-* fields to Git.
+
+  [ Florian Schlichting ]
+  * Imported Upstream version 0.5.
+  * Rewrote debian/copyright to use copyright-format 1.0.
+  * Switched to source format 3.0 (quilt).
+  * Switched to short-form debian/rules.
+  * debian/control: 
+    + wrap-and-sort (build-)dependencies
+    + removed dependencies on distributions integrated into perl core
+    + removed unused build-dependencies
+    + brushed up short and long description
+    + bumped Standards-Version to 3.9.3 (no further changes)
+  * Bumped dh compatibility to level 8 (no changes necessary).
+  * Added myself to Uploaders.
+
+ -- Florian Schlichting <fschlich@zedat.fu-berlin.de>  Fri, 04 May 2012 23:43:35 +0200
+
+libauthen-simple-perl (0.4-5) unstable; urgency=low
+
+  * debian/control: Added: Vcs-Svn field (source stanza); Vcs-Browser
+    field (source stanza); Homepage field (source stanza). Removed: XS-
+    Vcs-Svn fields. Add XS-DM-Upload-Allowed: yes.
+  * debian/rules: 
+    - delete /usr/lib/perl5 only if it exists (Closes: #468239).
+    - swap binary-arch and binary-indep, this package is arch:all
+    - remove OPTIMIZE, this package is still arch:all
+    - let install-stamp depend on build-stamp
+    - install upstream changelog
+    - don't install README anymore, it's just the text version of the POD
+      documentation
+  * debian/watch: use dist-based URL.
+  * Set Standards-Version to 3.7.3 (no changes).
+  * Set debhelper compatibility level to 6.
+
+ -- Xavier Oswald <x.oswald@free.fr>  Wed, 27 Feb 2008 22:51:59 +0100
+
+libauthen-simple-perl (0.4-4) unstable; urgency=low
+
+  * Add libauthen-simple-cdbi-perl, libauthen-simple-dbi-perl,
+    libauthen-simple-dbm-perl, libauthen-simple-net-perl,
+    libauthen-simple-radius-perl as Suggests
+  * Add libauthen-simple-ldap-perl as Recommends
+
+ -- Xavier Oswald <x.oswald@free.fr>  Tue, 31 Jul 2007 15:10:53 +0200
+
+libauthen-simple-perl (0.4-3) unstable; urgency=low
+
+  * Dropping Apache 1.x (libapache-mod-perl) as a build-dependency, as
+    it was dropped from the archive (Closes: #432498)
+
+ -- Gunnar Wolf <gwolf@debian.org>  Tue, 10 Jul 2007 09:58:06 -0500
+
+libauthen-simple-perl (0.4-2) unstable; urgency=medium
+
+  [Xavier Oswald]
+  * Add libauthen-simple-kerberos-perl as Recommends (closes: #409924)
+
+  [Gregor hermann]
+  * Clarify the relation to other libauthen-simple-*-perl package by changing the description 
+    and adding a Recommends: field to debian/control.
+  * Urgency set to medium because this upload fixes a bug of severity 'Important'.
+
+ -- Xavier Oswald <x.oswald@free.fr>  Fri,  9 Feb 2007 17:02:46 +0100
+
+libauthen-simple-perl (0.4-1) unstable; urgency=low
+
+  * Initial release (Closes: #396849) 
+
+ -- Xavier Oswald <x.oswald@free.fr>  Thu,  2 Nov 2006 17:15:35 +0100
