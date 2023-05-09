@@ -1,15 +1,37 @@
-Source: template-repository
-Section: unknown
+Source: libauthen-simple-perl
+Section: perl
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Christian Kuelker <christian.kuelker@cipworx.org>,
+ Xavier Oswald <x.oswald@free.fr>, gregor herrmann <gregoa@debian.org>,
+ Florian Schlichting <fschlich@zedat.fu-berlin.de>
+Build-Depends: debhelper (>= 8)
+Build-Depends-Indep: perl,
+ libclass-accessor-perl,
+ libclass-data-inheritable-perl,
+ libcrypt-passwdmd5-perl,
+ libparams-validate-perl
+Standards-Version: 3.9.3
+Homepage: http://search.cpan.org/dist/Authen-Simple/
+Vcs-Git: git://git.debian.org/pkg-perl/packages/libauthen-simple-perl.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-perl/packages/libauthen-simple-perl.git
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: libauthen-simple-perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends},
+ libclass-accessor-perl,
+ libclass-data-inheritable-perl,
+ libcrypt-passwdmd5-perl,
+ libparams-validate-perl
+Recommends: libauthen-simple-pam-perl | libauthen-simple-passwd-perl | libauthen-simple-http-perl | libauthen-simple-ldap-perl | libauthen-simple-smb-perl | libauthen-simple-kerberos-perl
+Suggests: libauthen-simple-cdbi-perl | libauthen-simple-dbi-perl | libauthen-simple-dbm-perl | libauthen-simple-net-perl | libauthen-simple-radius-perl
+Description: simple and consistent perl framework for authentication
+ Authen::Simple is the base package for various authentication methods
+ written by the same author and available in the following packages:
+ .
+   * libauthen-simple-pam-perl
+   * libauthen-simple-passwd-perl
+   * libauthen-simple-http-perl
+   * libauthen-simple-ldap-perl
+   * libauthen-simple-smb-perl
+   * libauthen-simple-kerberos-perl
